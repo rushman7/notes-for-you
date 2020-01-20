@@ -13,11 +13,9 @@ class EditNote extends React.Component {
 
     componentDidMount() {
         this.props.getNote(this.props.id);
-        console.log('cdm state', this.state)
     }
 
     componentWillReceiveProps(newProps) {
-        console.log('cwrp', newProps)
         this.setState({
             noteName: newProps.noteName,
             noteBody: newProps.noteBody
@@ -28,12 +26,13 @@ class EditNote extends React.Component {
         event.preventDefault();
         const { noteName, noteBody } = this.state;
         const changedNote = {
-            id: this.props.id,
-            name: this.capTitle(noteName),
-            body: this.capSentences(noteBody)
+            id: parseInt(this.props.id),
+            title: this.capTitle(noteName),
+            content: this.capSentences(noteBody)
         }
         this.props.updateNote(changedNote);
         this.setState({ noteName: '', noteBody: '' });
+        this.props.history.push('/')
     }
 
     handleInputChange = event => {
@@ -95,8 +94,8 @@ const mapStateToProps = (state, ownProps) => {
             updateNote: state.rootReducer.noteReducer.updateNote,
             error: state.rootReducer.noteReducer.error,
             id: ownProps.match.params.id,
-            noteName: thisNote.name,
-            noteBody: thisNote.body
+            noteName: thisNote.title,
+            noteBody: thisNote.content
         }
     }
     return {

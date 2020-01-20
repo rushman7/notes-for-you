@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addNote } from '../../actions';
 
-
 class NewNote extends React.Component {
     constructor(props) {
         super(props);
@@ -16,11 +15,12 @@ class NewNote extends React.Component {
         event.preventDefault();
         const { noteName, noteBody } = this.state;
         const newNote = {
-            name: noteName,
-            body: noteBody
+            title: noteName,
+            content: noteBody
         }
         this.props.addNote(newNote);
         this.setState({ noteName: '', noteBody: '' });
+        this.props.link.history.push('/')
     }
 
     handleInputChange = event => {

@@ -5,19 +5,23 @@ import Notes from './Notes/Notes';
 import NewNote from './NewNote/NewNote';
 import ViewNote from './Notes/ViewNote';
 import EditNote from './NewNote/EditNote';
+import { getNotes } from '../actions';
+import { connect } from 'react-redux';
 
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getNotes();
+  }
+
   render() {
     return (
       <div className="container">
       <SideNav />
         <Switch>
-          <Route exact path="/"
-          render = {(props) => <Notes />} />
-          <Route path="/newNote"
-          render = {(props) => <NewNote />} />
+          <Route exact path="/" render = {(props) => <Notes />} />
+          <Route path="/newNote" render = {(props) => <NewNote link={props}/>} />
           <Route path="/notes/:id/edit" component={EditNote}/>
           <Route path="/notes/:id" component={ViewNote}/>
         </Switch>
@@ -26,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { getNotes })(App)

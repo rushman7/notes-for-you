@@ -13,7 +13,7 @@ const SideNav = () => {
             <div className="sideNav__directory" >
                 <div className="directory__title" >
                     <Link to="/" style={styled} >
-                    Lambda Notes
+                        Notes For You
                     </Link>
                 </div>
                 <div className="directory__links" >
