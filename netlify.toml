@@ -2,4 +2,5 @@
   base = "client/"
 
 [[redirects]]
-  /* / 200
+  from = "/*"
+  to = "/" 
