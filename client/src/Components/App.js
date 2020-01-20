@@ -21,7 +21,7 @@ class App extends Component {
       <SideNav />
         <Switch>
           <Route exact path="/" render = {(props) => <Notes />} />
-          <Route path="/newNote" render = {(props) => <NewNote link={props}/>} />
+          <Route path="/newNote" render = {(props) => <NewNote />} />
           <Route path="/notes/:id/edit" component={EditNote}/>
           <Route path="/notes/:id" component={ViewNote}/>
         </Switch>

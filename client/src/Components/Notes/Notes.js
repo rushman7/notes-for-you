@@ -1,6 +1,7 @@
 import React from 'react';
 import Note from './Note';
 import { connect } from 'react-redux';
+import { getNotes } from '../../actions';
 import { Link } from 'react-router-dom';
 
 const styled = {
@@ -9,6 +10,9 @@ const styled = {
 }
 
 class Notes extends React.Component {
+    componentDidMount() {
+        this.props.getNotes();
+    }
     render() {
         return (
             <div className="mainContent" >
@@ -36,4 +40,4 @@ const stateProps = (state) => {
     }
 }
 
-export default connect(stateProps, {})(Notes);
+export default connect(stateProps, {getNotes})(Notes);

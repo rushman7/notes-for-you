@@ -20,7 +20,6 @@ class NewNote extends React.Component {
         }
         this.props.addNote(newNote);
         this.setState({ noteName: '', noteBody: '' });
-        this.props.link.history.push('/')
     }
 
     handleInputChange = event => {
