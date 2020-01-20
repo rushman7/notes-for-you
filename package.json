@@ -1,0 +1,30 @@
+{
+  "name": "notes-for-you",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rushman7/notes-for-you.git"
+  },
+  "author": "BuildTools <arthurpisakhov1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "enzyme": "^3.4.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.6",
+    "pg": "^7.17.1",
+    "sqlite3": "^4.1.1",
+    "start": "^5.1.0",
+    "supertest": "^3.1.0",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2"
+  }
+}
