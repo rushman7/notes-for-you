@@ -13,5 +13,6 @@ server.get("/", (req, res) => {
   res.send({ msg: "Server is up and running" });
 });
 
-const port = 5000;
-server.listen(port, () => console.log(`\n=== API running on ${port} ===\n`));
+const PORT = process.env.PORT || 5000;
+
+server.listen(port, () => console.log(`\n=== API running on ${PORT} ===\n`));
