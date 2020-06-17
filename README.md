@@ -1,3 +1,24 @@
+Notes For You is a small note-taking app created with React + Redux. A small node/express.js server was created to support the data persisting and saving to the database. 
+**[Link](https://notes-for-you.netlify.com/)**  
+
+##### Stack:
+- React.js:
+    - Based on **reusable components** to build an entire app
+    - High performance with the **virtual DOM**
+    - Powerful **dev tools** for faster debugging
+
+- Redux.js:
+    - **Reducers** used to call from server.
+    - Easier to track **error** logs
+    - Powerful **dev tools** for faster debugging
+
+- Node/Express.js:
+    - **CRUD** from express
+    - Manages routes, requests, and data
+
+
+<img src="https://media.giphy.com/media/2bV9hetdWBRsX49bHS/giphy.gif"/>
+
 # Notes For You Backend
 
 ## Getting Started (Online)
